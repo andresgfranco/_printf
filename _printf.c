@@ -53,7 +53,7 @@ int format_reader(va_list valist, const char *format)
 			}
 			else
 			{
-				for (j = 0; j < 5; j++)
+				for (j = 0; j < 6; j++)
 				{
 					if (format[i + 1] == dataType[j].frm[0])
 					{
@@ -62,7 +62,7 @@ int format_reader(va_list valist, const char *format)
 						break;
 					}
 				}
-				if (j == 5)
+				if (j == 6)
 					printedCharacters += _putchar('%');
 			}
 		}
