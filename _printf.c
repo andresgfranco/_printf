@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 
 	if (format == NULL)
 		return (-1);
-	printedCharacters = _formatevaluation(va_list valist, const char *format);
+	printedCharacters = format_reader(va_list valist, const char *format);
 
 	va_end(valist);
 	return (prc);
