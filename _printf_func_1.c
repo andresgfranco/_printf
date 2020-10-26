@@ -31,3 +31,38 @@ int prtf_s(va_list valist)
 	}
 	return (i);
 }
+
+/**
+ *prtf_int - prints integer
+ *@valist: va_list variable
+ *Return: prints given number of integers
+ */
+
+int prtf_int(va_list valist)
+{
+	long int num1 = va_arg(valist, int), num2;
+	int div = 1, i = 0;
+
+	if (num1 < 0)
+	{
+		_putchar('-');
+		i++;
+		num1 * -1;
+	}
+	num2 = num1;
+	while (num2 > 9)
+	{
+		div *= 10;
+		num2 = num2 / 10;
+	}
+	while (div >= 1)
+	{
+		num2 = num1 % div;
+		num /= div;
+		_putchar(num + '0');
+		num1 = num2;
+		div /= 10;
+		i++;
+	}
+	return (i);
+}
