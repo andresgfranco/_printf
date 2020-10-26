@@ -1,4 +1,7 @@
 #include "holberton.h"
+
+int format_reader(va_list valist, const char *format);
+
 /**
   * _printf - produces output according to a format
   * @format: character string
@@ -18,4 +21,53 @@ int _printf(const char *format, ...)
 	va_end(valist);
 	return (prc);
 }
+/**
+  * format_reader - function that will compare the format with our instructions
+  * @format: format provided by the main _printf function
+  * @valist: valist argument provided by the main _printf function
+  * Return: number of printed characters
+**/
+int format_reader(va_list valist, const char *format)
+{
+	int i = 0, j = 0, printedCharacters = 0;
+	func_prtf dataType[] = {{"c", pf_c}, {"s", pf_s}};
 
+	while (format != NULL && format[i] != '\0')
+	{
+		if (format[i] == '%')
+		{
+			if (format[i + 1] == '\0')
+				return (-1);
+			if (format[i + 1] == '%')
+			{
+				printedCharacters += _putchar ('%');
+				i++;
+			}
+			else if (format[i + 1] == ' ')
+			{
+				while (format[i + 1] == ' ')
+					i++;
+				printedCharacters += _putchar('%');
+				printedCharacers += _putchar(' ');
+			}
+			else
+			{
+				for (j = 0; j < 2; j++)
+				{
+					if (format[i + 1] == dataType[j].frm[0])
+					{
+						printedCharacters += dataType[j].func(valist);
+						i++;
+						break;
+					}
+				}
+				if (j == 2)
+					printedCharacters += _putchar('%');
+			}
+		}
+		else
+			printedCharacters += _putchar (format[i]);
+		i++;
+	}
+	return (printedCharacters);
+}
