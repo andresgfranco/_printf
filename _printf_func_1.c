@@ -66,3 +66,24 @@ int prtf_int(va_list valist)
 	}
 	return (i);
 }
+
+/**
+ *prtf_rev - prints string in reverse
+ *@valist: va_list variable
+ *Return: prints given string in reverse
+ */
+
+int prtf_rev(va_list valist)
+{
+	char *s = va_arg(valist, char *);
+	int i, j;
+
+	for (i = 0; s[i]; i++)
+		;
+	j = i;
+	i--;
+	for (; i >= 0; i--)
+		_putchar(s[i]);
+
+	return (j);
+}
