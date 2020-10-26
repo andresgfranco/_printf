@@ -24,5 +24,6 @@ int _printf(const char *format, ...);
 int prtf_c(va_list valist);
 int prtf_s(va_list valist);
 int prtf_int(va_list valist);
+int prtf_rev(va_list valist);
 
 #endif
