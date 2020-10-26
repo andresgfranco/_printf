@@ -47,7 +47,7 @@ int prtf_int(va_list valist)
 	{
 		_putchar('-');
 		i++;
-		num1 * -1;
+		num1 *= -1;
 	}
 	num2 = num1;
 	while (num2 > 9)
@@ -58,8 +58,8 @@ int prtf_int(va_list valist)
 	while (div >= 1)
 	{
 		num2 = num1 % div;
-		num /= div;
-		_putchar(num + '0');
+		num1 /= div;
+		_putchar(num1 + '0');
 		num1 = num2;
 		div /= 10;
 		i++;
