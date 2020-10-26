@@ -31,7 +31,7 @@ int format_reader(va_list valist, const char *format)
 {
 	int i = 0, j = 0, printedCharacters = 0;
 	func_prtf dataType[] = {{"c", prtf_c}, {"s", prtf_s}, {"d", prtf_int},
-		{"i", prtf_int}, {"r", prtf_rev}};
+		{"i", prtf_int}, {"r", prtf_rev} {"R", prtf_rot}};
 
 	while (format != NULL && format[i] != '\0')
 	{
