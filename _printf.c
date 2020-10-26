@@ -30,7 +30,8 @@ int _printf(const char *format, ...)
 int format_reader(va_list valist, const char *format)
 {
 	int i = 0, j = 0, printedCharacters = 0;
-	func_prtf dataType[] = {{"c", prtf_c}, {"s", prtf_s}, {"d", prtf_int}, {"i", prtf_int}};
+	func_prtf dataType[] = {{"c", prtf_c}, {"s", prtf_s}, {"d", prtf_int},
+		{"i", prtf_int}, {"r", prtf_rev}};
 
 	while (format != NULL && format[i] != '\0')
 	{
@@ -52,7 +53,7 @@ int format_reader(va_list valist, const char *format)
 			}
 			else
 			{
-				for (j = 0; j < 4; j++)
+				for (j = 0; j < 5; j++)
 				{
 					if (format[i + 1] == dataType[j].frm[0])
 					{
@@ -61,7 +62,7 @@ int format_reader(va_list valist, const char *format)
 						break;
 					}
 				}
-				if (j == 4)
+				if (j == 5)
 					printedCharacters += _putchar('%');
 			}
 		}
