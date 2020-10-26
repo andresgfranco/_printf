@@ -100,6 +100,7 @@ int prtf_rot(va_list valist)
 	char reg[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char rot13[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 	int i = 0, cnt = 0, whtspace = 0;
+	int j;
 
 	if (c == NULL)
 		c = "(null)";
@@ -112,7 +113,7 @@ int prtf_rot(va_list valist)
 			{
 				_putchar(rot13[j]);
 				cnt++;
-				wthspace++;
+				whtspace++;
 			}
 		}
 		if (whtspace == 0)
