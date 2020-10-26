@@ -87,3 +87,39 @@ int prtf_rev(va_list valist)
 
 	return (j);
 }
+
+/**
+ *prtf_rot - prints rot13 string
+ *@valist: va_list variable
+ *Return: prints ROT13 string
+ */
+
+int prtf_rot(va_list valist)
+{
+	char *c = va_arg(valist, char *);
+	char reg[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char rot13[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	int i = 0, cnt = 0, whtspace = 0;
+
+	if (c == NULL)
+		c = "(null)";
+	for (i = 0; c[i]; i++)
+	{
+		whtspace = 0;
+		for (j = 0; reg[j] != '\0' && !whtspace; j++)
+		{
+			if (c[i] == reg[j])
+			{
+				_putchar(rot13[j]);
+				cnt++;
+				wthspace++;
+			}
+		}
+		if (whtspace == 0)
+		{
+			_putchar(c[i]);
+			cnt++;
+		}
+	}
+	return (cnt);
+}
