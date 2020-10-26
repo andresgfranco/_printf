@@ -17,3 +17,12 @@ typedef struct prtf
 	char *frm;
 	int (*func)(va_list valist);
 } func_prtf;
+
+/* -- Prototypes --*/
+int _putchar(char c);
+int _printf(const char *format, ...);
+int format_reader(va_list valist, const char *format);
+int prtf_c(va_list valist);
+int prtf_s(va_list valist);
+
+#endif
