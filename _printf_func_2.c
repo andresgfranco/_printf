@@ -3,6 +3,12 @@
 void greater_than_127(char *s);
 void less_than_32(char *s);
 
+/**
+  * prtf_Snonprintable - prints the string with
+  * non printable characters
+  * @valist: string coming
+  * Return: number of printed characters
+**/
 int prtf_Snonprintable(va_list valist)
 {
 	int i, cnt = 0;
@@ -35,6 +41,12 @@ int prtf_Snonprintable(va_list valist)
 	return (cnt);
 }
 
+/**
+  * greater_than_127 - if the character is greater than 127
+  * in ASCII table then print it as requested
+  * @s: string coming
+  * Return: void
+**/
 void greater_than_127(char *s)
 {
 	int i, x = 7, y = 15;
@@ -59,18 +71,24 @@ void greater_than_127(char *s)
 				sc = second[y + 1];
 				break;
 			}
-			if(y == 16)
+			if (y == 16)
 				y = 0;
 		}
-		if(x == 16)
+		if (x == 16)
 			x = 0;
-		if(i == *s)
+		if (i == *s)
 			break;
 	}
 	_putchar(fc);
 	_putchar(sc);
 }
 
+/**
+  * less_than_32 - if the character is less than 32
+  * in ASCII table then print it as requested
+  * @s: string coming
+  * Return: void
+**/
 void less_than_32(char *s)
 {
 	int i, x = 0, y = 0;
@@ -95,12 +113,12 @@ void less_than_32(char *s)
 				sc = second[y + 1];
 				break;
 			}
-			if(y == 16)
+			if (y == 16)
 				y = 0;
 		}
-		if(x == 16)
+		if (x == 16)
 			x = 0;
-		if(i == *s)
+		if (i == *s)
 			break;
 	}
 	_putchar(fc);
